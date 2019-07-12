@@ -88,8 +88,8 @@
                 path: 
                 with builtins;
                 writeShellScriptBin (head (splitVersion (baseNameOf (toString path)))) (readFile path);
-            vpn_start = writeShellScriptBin "vpn_start" (makeVpnScript "start");
-            vpn_stop = writeShellScriptBin "vpn_stop" (makeVpnScript "stop");
+            vpn_start = writeShellScriptBin "vpn_start" (makeVpnScript "start" openvpn);
+            vpn_stop = writeShellScriptBin "vpn_stop" (makeVpnScript "stop" killall);
             scriptsList = map makeScript scriptPaths; 
         };
         scriptsList ++ [

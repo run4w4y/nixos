@@ -1,4 +1,5 @@
 action:
+package:
 
 if action == "start" then
 ''
@@ -13,7 +14,7 @@ then
 else
     dunstify -a "VPN" -u low -r $msg_id \
         "on" " <b>VPN</b> - on"
-    sudo "$(readlink $(which openvpn))" --config ~/.config.ovpn &
+    sudo ${package}/bin/openvpn --config ~/.config.ovpn &
 fi
 ''
 else
@@ -24,7 +25,7 @@ target=openvpn
 msg_id=991040
 if pgrep -x $target >/dev/null
 then
-    sudo "$(readlink $(which killall))" $target
+    sudo ${package}/bin/killall $target
     dunstify -a "VPN" -u low -r $msg_id \
         "off" " <b>VPN</b> - off"
 else

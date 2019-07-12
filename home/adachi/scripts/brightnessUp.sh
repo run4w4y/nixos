@@ -6,4 +6,4 @@ xbacklight -inc 10 > /dev/null
 
 value="$(xbacklight)"
 dunstify -a "changeBrightness" -u low -r "$msgId" \
-    "${value}" "$(~/.scripts/getprogressstring 15 "" "" $value)"
+    "${value}" "$(getProgressString 15 "" "" $value)"

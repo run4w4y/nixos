@@ -56,11 +56,11 @@
                 groups = [ "vpnusers" ]; 
                 commands = [
                     {
-                    command = "${pkgs.openvpn}/bin/openvpn --config ~/.config.ovpn";
+                    command = "${pkgs.openvpn}/bin/openvpn";
                     options = [ "NOPASSWD" ];
                     }
                     {
-                    command = "${pkgs.killall}/bin/killall openvpn";
+                    command = "${pkgs.killall}/bin/killall";
                     options = [ "NOPASSWD" ];
                     }
                 ]; 

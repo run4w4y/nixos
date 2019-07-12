@@ -12,11 +12,9 @@ volume="$(amixer sget Master | grep 'Right:' | awk -F'[][]' '{ print $2 }' | sed
 mute="$(amixer sget Master | grep 'Right:' | awk -F'[][]' '{ print $4 }')"
 if [[ $volume == 0 || $mute == "off" ]]; then
     # Show the sound muted notification
-    dunstify -a "changeVolume" -u low -r "$msgId" "0%" " $(~/.scripts/getprogressstring 13 "" "" 0)"
+    dunstify -a "changeVolume" -u low -r "$msgId" "0%" " $(getProgressString 13 "" "" 0)"
 else
     # Show the volume notification
     dunstify -a "changeVolume" -u low -r "$msgId" \
-    "${volume}%" "$(~/.scripts/getprogressstring 15 "" "" $volume)"
+    "${volume}%" "$(~/.scripts/getProgressString 15 "" "" $volume)"
 fi
-# Play the volume changed sound
-canberra-gtk-play -i audio-volume-change -d "changeVolume"
