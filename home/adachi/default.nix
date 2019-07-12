@@ -81,12 +81,18 @@
     home = {
         packages = 
         with import <nixpkgs> {};
-        let makeVpnScript = import ./vpn; in
-        let
-        vpn_start = writeShellScriptBin "vpn_start" (makeVpnScript "start");
-        vpn_stop = writeShellScriptBin "vpn_stop" (makeVpnScript "stop");
-        in
-        [
+        with rec {
+            makeVpnScript = import ./vpn;
+            scriptPaths = import ./scripts;
+            makeScript = 
+                path: 
+                with builtins;
+                writeShellScriptBin (head (splitVersion (baseNameOf (toString path)))) (readFile path);
+            vpn_start = writeShellScriptBin "vpn_start" (makeVpnScript "start");
+            vpn_stop = writeShellScriptBin "vpn_stop" (makeVpnScript "stop");
+            scriptsList = map makeScript scriptPaths; 
+        };
+        scriptsList ++ [
             vpn_start
             vpn_stop
         ];

@@ -64,6 +64,10 @@
                 vertTwoFingerScroll = true;
                 # scrollDelta is less than zero to enable natural scrolling 
                 scrollDelta = -75;
+                minSpeed = "0.8";
+                maxSpeed = "1.2";
+                accelFactor = "0.0015";
+                buttonsMap = [1 3 3];
             };
 
             # i personally use it for setting up dpi
