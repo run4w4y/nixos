@@ -54,8 +54,8 @@
             scrollbar = "right";
             colorsExtra = ''
                 color0 = #ffffff
-                color1 = #ffffff
-                color2 = #5cd62c
+                color1 = #379bde
+                color2 = #8fd99e
                 color3 = #e84a4a
                 color4 = #9263e8
                 color5 = #f491ff
@@ -64,11 +64,11 @@
                 color8 = #6d6d6d
                 color9 = #e5dcdc
                 color10 = #ff8787
-                color11 = #93ad7d
-                color12 = #ddd64b
-                color13 = #7091b0
+                color11 = #6a1fdb
+                color12 = #ffad42
+                color13 = #eb3461
                 color14 = #ffc6cf
-                color15 = #fcfcfc
+                color15 = #a6a6a6
             '';
         };
 

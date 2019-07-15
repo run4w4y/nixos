@@ -66,5 +66,6 @@
         cabal-install
         ghc
         okular
+        xorg.xev
     ];
 }
