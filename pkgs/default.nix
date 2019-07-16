@@ -59,7 +59,8 @@
         which
         unrar
         tree
-        unzip 
+        unzip
+        p7zip 
         transmission-gtk
         go
         blueman
@@ -67,5 +68,6 @@
         ghc
         okular
         xorg.xev
+        soulseekqt
     ];
 }
