@@ -4,10 +4,10 @@
 # usage: count_files <directory> <file_extension> 
 count_files () {
         if [ "$#" == 2 ]; then
-                local target=$1
-                local ext=$2
+                local target="$1"
+                local ext="$2"
         elif [ "$#" == 1 ]; then
-                local target=$1
+                local target="$1"
                 local ext=-1
         else
                 local target="./"
@@ -15,9 +15,9 @@ count_files () {
         fi
         
         if [ "$ext" != -1 ]; then
-                local res=$(find $target -maxdepth 1 -type f -name "*.$ext" -printf x | wc -c)
+                local res=$(find "$target" -maxdepth 1 -type f -name "*.$ext" -printf x | wc -c)
         else
-                local res=$(find $target -maxdepth 1 -type f -name "*" -printf x | wc -c)
+                local res=$(find "$target" -maxdepth 1 -type f -name "*" -printf x | wc -c)
         fi
 
         echo "$res"
@@ -27,12 +27,12 @@ count_files () {
 # usage: count_dirs <directory>
 count_dirs () {
         if [ "$#" == 1 ]; then
-                local target=$1
+                local target="$1"
         else
                 local target="./"
         fi
 
-        local res=$(echo "$(find $target -maxdepth 1 -type d -name "*" -printf x | wc -c) - 1" | bc)
+        local res=$(echo "$(find "$target" -maxdepth 1 -type d -name "*" -printf x | wc -c) - 1" | bc)
         echo "$res"
 }
 
@@ -73,12 +73,12 @@ if [ $zip_count != 0 ]; then
                 count_current=$(echo "$count_current + 1" | bc)
                 echo "$count_current/$count_total -- $archive in process..."
                 mkdir ".tmp"
-                unzip -qq -d ".tmp" "$archive"
+                7za e -o".tmp" -bso0 -bd -y -- "$archive"
         
                 # check if the insides of the archive are contained in a folder
-                if [ $(count_files .tmp) == 1 -a $(count_dirs .tmp) == 1 ]; then
-                        folder_name=$(basename ".tmp/*/")
-                        mv ".tmp/$folder_name" "$folder_name"
+                if [ $(count_files "$folder") == 0 -a $(count_dirs "$folder") == 1 ]; then
+                        folder_name=$(basename ./.tmp/*/)
+                        mv .tmp/"$folder_name" "$folder_name"
                 else
                         folder_name=$(basename "$archive" ".zip")
                         mv ".tmp" "$folder_name"
@@ -103,9 +103,9 @@ if [ $rar_count != 0 ]; then
                 unrar -idq e "$archive" ".tmp"
 
                 # check if the insides of the archive are contained in a folder
-                if [ $(count_files .tmp) == 1 -a $(count_dirs .tmp) == 1 ]; then
-                        folder_name=$(basename ".tmp/*/")
-                        mv ".tmp/$folder_name" "$folder_name"
+                if [ $(count_files "$folder") == 0 -a $(count_dirs "$folder") == 1 ]; then
+                        folder_name=$(basename ./.tmp/*/)
+                        mv .tmp/"$folder_name" "$folder_name"
                 else
                         folder_name=$(basename "$archive" ".rar")
                         mv ".tmp" "$folder_name"
@@ -127,12 +127,12 @@ if [ $sz_count != 0 ]; then
                 count_current=$(echo "$count_current + 1" | bc)
                 echo "$count_current/$count_total -- $archive in process..."
                 mkdir ".tmp"
-                7za e -o".tmp" -bso0 -bd -- "$archive"
+                7za e -o".tmp" -bso0 -bd -y -- "$archive"
 
                 # check if the insides of the archive are contained in a folder
-                if [ $(count_files .tmp) == 1 -a $(count_dirs .tmp) == 1 ]; then
-                        folder_name=$(basename ".tmp/*/")
-                        mv ".tmp/$folder_name" "$folder_name"
+                if [ $(count_files "$folder") == 0 -a $(count_dirs "$folder") == 1 ]; then
+                        folder_name=$(basename ./.tmp/*/)
+                        mv .tmp/"$folder_name" "$folder_name"
                 else
                         folder_name=$(basename "$archive" ".7z")
                         mv ".tmp" "$folder_name"

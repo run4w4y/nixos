@@ -69,5 +69,10 @@
         okular
         xorg.xev
         soulseekqt
+        cuetools
+        shntool
+        split2flac
+        rarcrack
+        hexchat
     ];
 }
