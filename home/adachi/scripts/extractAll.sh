@@ -76,7 +76,7 @@ if [ $zip_count != 0 ]; then
                 7za e -o".tmp" -bso0 -bd -y -- "$archive"
         
                 # check if the insides of the archive are contained in a folder
-                if [ $(count_files "$folder") == 0 -a $(count_dirs "$folder") == 1 ]; then
+                if [ $(count_files ".tmp") == 0 -a $(count_dirs ".tmp") == 1 ]; then
                         folder_name=$(basename ./.tmp/*/)
                         mv .tmp/"$folder_name" "$folder_name"
                 else
@@ -103,7 +103,7 @@ if [ $rar_count != 0 ]; then
                 unrar -idq e "$archive" ".tmp"
 
                 # check if the insides of the archive are contained in a folder
-                if [ $(count_files "$folder") == 0 -a $(count_dirs "$folder") == 1 ]; then
+                if [ $(count_files ".tmp") == 0 -a $(count_dirs ".tmp") == 1 ]; then
                         folder_name=$(basename ./.tmp/*/)
                         mv .tmp/"$folder_name" "$folder_name"
                 else
@@ -130,7 +130,7 @@ if [ $sz_count != 0 ]; then
                 7za e -o".tmp" -bso0 -bd -y -- "$archive"
 
                 # check if the insides of the archive are contained in a folder
-                if [ $(count_files "$folder") == 0 -a $(count_dirs "$folder") == 1 ]; then
+                if [ $(count_files ".tmp") == 0 -a $(count_dirs ".tmp") == 1 ]; then
                         folder_name=$(basename ./.tmp/*/)
                         mv .tmp/"$folder_name" "$folder_name"
                 else
