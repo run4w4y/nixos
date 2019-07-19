@@ -12,6 +12,11 @@
             config = import ./polybar;
             script = "sleep 1";
         };
+
+        mpd = {
+            enable = true;
+            musicDirectory = "/mnt/hdd/music";
+        };
     };
 
     programs = {

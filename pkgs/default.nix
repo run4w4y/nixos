@@ -74,5 +74,6 @@
         split2flac
         rarcrack
         hexchat
+        ncmpcpp
     ];
 }

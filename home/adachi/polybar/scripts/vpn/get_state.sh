@@ -3,7 +3,7 @@
 target=openvpn
 if pgrep -x $target >/dev/null
 then
-    echo 
+    echo "on"
 else
-    echo 
+    echo "off"
 fi
