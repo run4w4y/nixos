@@ -72,8 +72,10 @@
         cuetools
         shntool
         split2flac
-        rarcrack
+        fcrackzip
         hexchat
         ncmpcpp
+        ranger
+        python3
     ];
 }

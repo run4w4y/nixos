@@ -73,7 +73,7 @@ if [ $zip_count != 0 ]; then
                 count_current=$(echo "$count_current + 1" | bc)
                 echo "$count_current/$count_total -- $archive in process..."
                 mkdir ".tmp"
-                7za e -o".tmp" -bso0 -bd -y -- "$archive"
+                7za x -o".tmp" -bso0 -bd -y -- "$archive"
         
                 # check if the insides of the archive are contained in a folder
                 if [ $(count_files ".tmp") == 0 -a $(count_dirs ".tmp") == 1 ]; then
@@ -127,7 +127,7 @@ if [ $sz_count != 0 ]; then
                 count_current=$(echo "$count_current + 1" | bc)
                 echo "$count_current/$count_total -- $archive in process..."
                 mkdir ".tmp"
-                7za e -o".tmp" -bso0 -bd -y -- "$archive"
+                7za x -o".tmp" -bso0 -bd -y -- "$archive"
 
                 # check if the insides of the archive are contained in a folder
                 if [ $(count_files ".tmp") == 0 -a $(count_dirs ".tmp") == 1 ]; then
