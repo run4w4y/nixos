@@ -11,7 +11,7 @@
 
         # enable avahi
         avahi = {
-            enable = true;
+            enable = false;
             nssmdns = true;
             publish = {
                 enable = true;

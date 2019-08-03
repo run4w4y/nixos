@@ -65,86 +65,43 @@ fi
 
 count_current=0
 
-echo "Processing .zip archives"
+extract_archives () {
+        local ext="$1"
+        local a_count="$2"
 
-# process .zip archives
-if [ $zip_count != 0 ]; then 
-        for archive in *.zip; do
-                count_current=$(echo "$count_current + 1" | bc)
-                echo "$count_current/$count_total -- $archive in process..."
-                mkdir ".tmp"
-                7za x -o".tmp" -bso0 -bd -y -- "$archive"
-        
-                # check if the insides of the archive are contained in a folder
-                if [ $(count_files ".tmp") == 0 -a $(count_dirs ".tmp") == 1 ]; then
-                        folder_name=$(basename ./.tmp/*/)
-                        mv .tmp/"$folder_name" "$folder_name"
-                else
-                        folder_name=$(basename "$archive" ".zip")
-                        mv ".tmp" "$folder_name"
-                fi
+        echo "Processing .$ext archives"
 
-                mv "$archive" "archives_done"/"$archive"
-                rm -rf ".tmp"
-                echo "done"
-        done
-else
-        echo "No .zip archives were found, moving on..."
-fi
+        if [ $a_count != 0 ]; then 
+                for archive in *.$ext; do
+                        count_current=$(echo "$count_current + 1" | bc)
+                        echo "$count_current/$count_total -- $archive in process..."
+                        mkdir ".tmp"
+                        7z x -o".tmp" -bso0 -bd -y -- "$archive"
+                        
+                        # remove all the url shit in the archive
+                        find .tmp -type f -name '*.url' -exec rm {} +
+                
+                        # check if the insides of the archive are contained in a folder
+                        if [ $(count_files ".tmp") == 0 -a $(count_dirs ".tmp") == 1 ]; then
+                                folder_name=$(basename ./.tmp/*/)
+                                mv .tmp/"$folder_name" "$folder_name"
+                        else
+                                folder_name=$(basename "$archive" ".$ext")
+                                mv ".tmp" "$folder_name"
+                        fi
 
-echo "Processing .rar archives"
+                        mv "$archive" "archives_done"/"$archive"
+                        rm -rf ".tmp"
+                        echo "done"
+                done
+        else
+                echo "No .$ext archives were found, moving on..."
+        fi
+}
 
-# process .rar archives
-if [ $rar_count != 0 ]; then
-        for archive in *.rar; do
-                count_current=$(echo "$count_current + 1" | bc)
-                echo "$count_current/$count_total -- $archive in process..."
-                mkdir ".tmp"
-                unrar -idq e "$archive" ".tmp"
-
-                # check if the insides of the archive are contained in a folder
-                if [ $(count_files ".tmp") == 0 -a $(count_dirs ".tmp") == 1 ]; then
-                        folder_name=$(basename ./.tmp/*/)
-                        mv .tmp/"$folder_name" "$folder_name"
-                else
-                        folder_name=$(basename "$archive" ".rar")
-                        mv ".tmp" "$folder_name"
-                fi
-
-                mv "$archive" "archives_done"/"$archive"
-                rm -rf ".tmp"
-                echo "done"
-        done
-else
-        echo "No .rar archives were found, moving on..."
-fi
-
-echo "Processing .7z archives"
-
-# process .7z archives
-if [ $sz_count != 0 ]; then
-        for archive in *.7z; do
-                count_current=$(echo "$count_current + 1" | bc)
-                echo "$count_current/$count_total -- $archive in process..."
-                mkdir ".tmp"
-                7za x -o".tmp" -bso0 -bd -y -- "$archive"
-
-                # check if the insides of the archive are contained in a folder
-                if [ $(count_files ".tmp") == 0 -a $(count_dirs ".tmp") == 1 ]; then
-                        folder_name=$(basename ./.tmp/*/)
-                        mv .tmp/"$folder_name" "$folder_name"
-                else
-                        folder_name=$(basename "$archive" ".7z")
-                        mv ".tmp" "$folder_name"
-                fi
-
-                mv "$archive" "archives_done"/"$archive"
-                rm -rf ".tmp"
-                echo "done"
-        done
-else
-        echo "No .7z archives were found, moving on..."
-fi
+extract_archives zip $zip_count
+extract_archives rar $rar_count
+extract_archives 7z $sz_count
 
 elapsed_time=$(($SECONDS - $start_time))
 echo "Extracting finished. Extracted $count_total archives in $elapsed_time seconds"

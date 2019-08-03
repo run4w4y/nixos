@@ -75,7 +75,7 @@ with rec {
     };
 
     "bar/date-bar" = baseBar // {
-        width = "11%";
+        width = "12%";
         offset-x = 426;
         modules-left = "date_icon date hour";
     };

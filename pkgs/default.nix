@@ -77,5 +77,6 @@
         ncmpcpp
         ranger
         python3
+        appimage-run
     ];
 }
