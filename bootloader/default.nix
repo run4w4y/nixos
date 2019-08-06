@@ -1,10 +1,17 @@
 { config, lib, pkgs, ... }:
 
 {
-    # Use the systemd-boot EFI boot loader.
-    boot.loader.systemd-boot.enable = true;
-    boot.loader.efi.canTouchEfiVariables = true;
+    boot = {
+        # change ttl to 65 so my cellular provider wont complain
+        kernel.sysctl."net.ipv4.ip_default_ttl" = 65;
 
-    # this shit lets grub detect other systems installed alongside
-    boot.loader.grub.useOSProber = true;
+        loader = {
+            # Use the systemd-boot EFI boot loader.
+            systemd-boot.enable = true;
+            efi.canTouchEfiVariables = true;
+
+            # this shit lets grub detect other systems installed alongside
+            grub.useOSProber = true;
+        };
+    };
 }

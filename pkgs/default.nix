@@ -48,7 +48,9 @@
         xorg.xbacklight
         vlc
         gparted
+        qemu
         kvm
+        aqemu
         jetbrains.pycharm-professional
         jetbrains.clion
         hashit
