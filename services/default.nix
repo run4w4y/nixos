@@ -49,7 +49,8 @@
                     # enable bspwm
                     enable = true;
                     # path to the bspwmrc
-                    configFile = "/home/adachi/.config/bspwm/bspwmrc";
+                    configFile = bspwm/bspwmrc.sh;
+                    sxhkd.configFile = sxhkd/sxhkdrc;
                 };
             };
             
