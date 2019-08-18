@@ -19,6 +19,8 @@
         ./environment
         # home-manager
         ./home
+        # virtual machines shit
+        ./virtualisation
     ];
     
     # time zone

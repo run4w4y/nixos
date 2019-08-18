@@ -31,10 +31,10 @@ with rec {
         padding-right = 0;
         module-margin-left = 0; 
         module-margin-right = 0;
-        font-0 = "Noto Sans:size=14:style=Regular;1";
+        font-0 = "Noto Sans:size=13:style=Regular;1";
         font-1 = "Noto Sans:size=20:style=Regular;3";
-        font-2 = "Noto Sans:size=14:style=Regular;2";
-        font-3 = "FontAwesome:size=13:style=Regular;1";
+        font-2 = "Noto Sans:size=13:style=Regular;2";
+        font-3 = "FontAwesome:pixelsize=13:style=Regular;1";
         wm-restack = "bspwm";
     };
 
@@ -51,32 +51,34 @@ with rec {
 };
 {
     "bar/wlan-bar" = baseBar // {
-        width = "4.75%";
+        width = 40;
         offset-x = 10;
-        modules-left = "wlan_icon wireless-network";
-    };
-
-    "bar/battery-bar" = baseBar // {
-        width = "5.25%";
-        offset-x = 116;
-        modules-left = "battery_icon battery";
+        modules-center = "wireless-network";
+        background = colors.backgroundAlt;
     };
 
     "bar/vpn-bar" = baseBar // {
-        width = "4.25%";
-        offset-x = 232;
-        modules-left = "vpn_icon vpn";
+        width = 40;
+        offset-x = 70;
+        modules-center = "vpn";
+        background = colors.backgroundAlt;
+    };
+
+    "bar/battery-bar" = baseBar // {
+        width = 95;
+        offset-x = 130;
+        modules-left = "battery_icon battery";
     };
 
     "bar/language-bar" = baseBar // {
-        width = "4.25%";
-        offset-x = 329;
+        width = 80;
+        offset-x = 245;
         modules-left = "language_icon language";
     };
 
     "bar/date-bar" = baseBar // {
-        width = "12%";
-        offset-x = 426;
+        width = 215;
+        offset-x = 345;
         modules-left = "date_icon date hour";
     };
 
@@ -87,8 +89,8 @@ with rec {
     };
 
     "bar/right-bar" = baseBar // {
-        width = "11.35%";
-        offset-x = 1690;
+        width = 217;
+        offset-x = 1693;
         font-0 = "FontAwesome:size=15:style=Regular;1";
         font-1 = "FontAwesome:size=20:style=Regular;3";
         font-2 = "FontAwesome:size=20:style=Regular;2";
@@ -97,15 +99,17 @@ with rec {
         modules-right = "bspwm";
     };
 
-    "module/wlan_icon" = makeIcon "";
-
     "module/battery_icon" = makeIcon "";
 
     "module/vpn_icon" = makeIcon "";
 
-    "module/language_icon" = makeIcon "";
+    "module/language_icon" = makeIcon "" // { 
+        content-padding = 3;
+    };
 
-    "module/date_icon" = makeIcon "";
+    "module/date_icon" = makeIcon "" // { 
+        content-padding = 3;
+    };
 
     "module/username" = {
         type = "custom/text";
@@ -183,8 +187,8 @@ with rec {
         exec = scriptPath "vpn/get_state.sh";
         click-left = scriptPath "vpn/vpn_toggle.sh";
         tail = true;
-        format-background = colors.background;
-        format-foreground = colors.foreground;
+        format-background = colors.backgroundAlt;
+        format-foreground = colors.foregroundAlt;
         format-padding = 2;
     };
 
@@ -222,16 +226,16 @@ with rec {
 
         format-connected = "<label-connected>";
         format-disconnected = "<label-disconnected>";
-        format-connected-background = colors.background;
-        format-disconnected-background = colors.background;
+        format-connected-background = colors.backgroundAlt;
+        format-disconnected-background = colors.backgroundAlt;
 
-        label-connected-foreground = colors.foreground;
+        label-connected-foreground = colors.foregroundAlt;
         label-connected-padding = 2;
-        label-connected = "%{A1:${scriptPath "networks-popup.sh"} &:}on%{A}";
+        label-connected = "%{A1:${scriptPath "networks-popup.sh"} &:}%{A}";
         label-connected-padding-left = 2;
-        label-disconnected-foreground = colors.foreground;
+        label-disconnected-foreground = colors.foregroundTrans;
         label-disconnected-padding = 2;
-        label-disconnected = "%{A1:${scriptPath "networks-popup.sh"} &:}off%{A}";
+        label-disconnected = "%{A1:${scriptPath "networks-popup.sh"} &:}%{A}";
         label-disconnected-padding-left = 2;
     };
 }

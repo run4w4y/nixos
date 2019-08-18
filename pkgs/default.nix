@@ -80,5 +80,7 @@
         ranger
         python3
         appimage-run
+        cloc
+        python3Packages.ipython
     ];
 }
