@@ -65,20 +65,20 @@ with rec {
     };
 
     "bar/battery-bar" = baseBar // {
-        width = 95;
+        width = 100;
         offset-x = 130;
         modules-left = "battery_icon battery";
     };
 
     "bar/language-bar" = baseBar // {
         width = 80;
-        offset-x = 245;
+        offset-x = 250;
         modules-left = "language_icon language";
     };
 
     "bar/date-bar" = baseBar // {
         width = 215;
-        offset-x = 345;
+        offset-x = 350;
         modules-left = "date_icon date hour";
     };
 
@@ -214,9 +214,9 @@ with rec {
         format-full-background = colors.background;
         format-full-foreground = colors.foreground;
 
-        format-full-padding = 1;
-        format-discharging-padding = 1;
-        format-charging-padding = 1;
+        format-full-padding = 2;
+        format-discharging-padding = 2;
+        format-charging-padding = 2;
     };
 
     "module/wireless-network" = {
