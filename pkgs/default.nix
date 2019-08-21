@@ -13,7 +13,6 @@
         bc
         htop
         wget
-        # git
         curl
         file
         nmap
@@ -25,20 +24,15 @@
         tdesktop
         python
         dunst # need it for dunstify to work cause home-manager is big dumb and doesnt let you override the package
-        # compton
         nitrogen
         polybar
-        # rofi
-        # termite
         xst
         sxhkd
         mycode
-        # vim
         lxappearance
         ark
         killall
         glxinfo
-        # flameshot
         xorg.xdpyinfo
         openvpn
         gcc
@@ -82,5 +76,6 @@
         appimage-run
         cloc
         python3Packages.ipython
+        easytag
     ];
 }

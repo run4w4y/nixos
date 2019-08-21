@@ -22,8 +22,6 @@ bspc rule -a Screenkey manage=off
 bspc rule -a xst-256color:xst-calendar state=floating focus=off monitor='eDP1'
 bspc rule -a xst-256color:xst-nmtui state=floating focus=on
 
-nitrogen --restore & /home/adachi/.scripts/fix_scroll.sh
-
-/home/adachi/.start_polybar.sh
-
+nitrogen --restore
+startPolybar
 lxappearance & sleep 0.5 && killall lxappearance

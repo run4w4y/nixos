@@ -1,5 +1,4 @@
 #!/bin/sh
-# changeVolume
 
 # Arbitrary but unique message id
 msgId="991049"
@@ -16,5 +15,5 @@ if [[ $volume == 0 || $mute == "off" ]]; then
 else
     # Show the volume notification
     dunstify -a "changeVolume" -u low -r "$msgId" \
-    "${volume}%" "$(~/.scripts/getProgressString 15 "" "" $volume)"
+    "${volume}%" "$(getProgressString 15 "" "" $volume)"
 fi

@@ -102,9 +102,9 @@
             vpn_stop
         ];
 
-        file = {
-            ".config.ovpn".text = import vpn/config.nix;
-            ".start_polybar.sh".source = polybar/scripts/start_polybar.sh;
-        };
+        # file = {
+        #     ".config.ovpn".text = import vpn/config.nix;
+        #     ".start_polybar.sh".source = polybar/scripts/start_polybar.sh;
+        # };
     };
 }

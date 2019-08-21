@@ -68,7 +68,7 @@
 
             # i personally use it for setting up dpi
             monitorSection = ''
-                DisplaySize 406 228
+                DisplaySize 470 264
             '';
         };
 

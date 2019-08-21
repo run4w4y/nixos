@@ -14,7 +14,7 @@ then
 else
     dunstify -a "VPN" -u low -r $msg_id \
         "on" " <b>VPN</b> - on"
-    sudo ${package}/bin/openvpn --config ~/.config.ovpn &
+    sudo ${package}/bin/openvpn --config ${toString ./config.ovpn} &
 fi
 ''
 else

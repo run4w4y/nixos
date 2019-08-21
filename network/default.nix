@@ -2,12 +2,6 @@
 
 {
     networking = {
-        sits = {
-            wlan = {
-                dev = "wlp60s0";
-                ttl = 65;
-            };
-        };
         # hostname of the system
         hostName = "nixos";
         # enable NetworkManager (instead of wpa_supplicant)
