@@ -11,6 +11,12 @@
     version = "6.0.1";
     sha256 = "dcaf64e8895f5becfd97c47c272dc5ae59deece54f818ba368a1405f4f9cb360";
     }
+    { # another nice light theme
+    name = "night-owl-plus";
+    publisher = "svipas";
+    version = "1.0.2";
+    sha256 = "22b3d29022df97f47b1b947bd3c05afa2a5b9febd05d5b5adafd4bf180c06680";
+    }
     { # support for cmake files 
     name = "cmake";
     publisher = "twxs";
