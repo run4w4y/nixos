@@ -77,5 +77,8 @@
         cloc
         python3Packages.ipython
         easytag
+        flacon
+        flac
+        gdrivefs
     ];
 }

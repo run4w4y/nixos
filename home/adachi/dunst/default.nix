@@ -2,7 +2,7 @@ let
     colors = {
         background = "#ffffff";
         foreground = "#6d6d6d";
-        frame_color = "#ff8787";
+        frame_color = "#4a4a4a";
     };
 in
 {

@@ -29,4 +29,10 @@
     version = "0.11.3";
     sha256 = "404027a71e1b8662dc7b3bc434dbaec4beb6340b854e6d5f5d2de10d3c3e344c";
     }
+    { # haskell
+    name = "vscode-hie-server";
+    publisher = "alanz";
+    version = "0.0.28";
+    sha256 = "d94f1bd5933c3b0b6b2e55899f7384490a93980bda89a0a1a9aff1474bb6dcbd";
+    }
 ]

@@ -79,7 +79,7 @@
 
         rofi = {
             enable = true;
-            theme = ./rofi/arc-red.rasi;
+            theme = ./rofi/theme.rasi;
         };
     };
 
@@ -102,9 +102,15 @@
             vpn_stop
         ];
 
-        # file = {
-        #     ".config.ovpn".text = import vpn/config.nix;
-        #     ".start_polybar.sh".source = polybar/scripts/start_polybar.sh;
-        # };
+        file = 
+        let
+            nitrogenConfig = import ./nitrogen;
+            rofiConfig = import ./rofi;
+        in
+            {
+                ".config/nitrogen/bg-saved.cfg".text = nitrogenConfig.bg-saved;
+                ".config/nitrogen/nitrogen.cfg".text = nitrogenConfig.config;
+                "~/.config/rofi/config".text = rofiConfig;
+            };
     };
 }

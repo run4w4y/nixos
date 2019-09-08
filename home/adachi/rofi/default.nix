@@ -1,0 +1,3 @@
+''
+rofi.theme: ${./theme.rasi}
+''
