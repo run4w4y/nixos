@@ -41,4 +41,16 @@
     version = "0.0.28";
     sha256 = "d94f1bd5933c3b0b6b2e55899f7384490a93980bda89a0a1a9aff1474bb6dcbd";
     }
+    { # coconut
+    name = "vscode-coconut";
+    publisher = "Qwerp-Derp";
+    version = "0.0.1";
+    sha256 = "2aebeb5d44feac96daad1f0755716dbc19bd03e0a31f7efe9c7608b6c103c127";
+    }
+    { # jinja2 templates
+    name = "jinjahtml";
+    publisher = "samuelcolvin";
+    version = "0.10.6";
+    sha256 = "73c0264d9c939ef3b60d4d788692c9ba29449ff6e03975692782fed816a4fc9b";
+    }
 ]

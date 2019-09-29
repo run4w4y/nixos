@@ -8,9 +8,23 @@
 
     hardware = {
         # enbale pulseaudio
-        pulseaudio.enable = true;
+        pulseaudio = {
+            enable = true;
+            # extraModules = [ pkgs.pulseaudio-modules-bt ];
+            # package = pkgs.pulseaudioFull;
+            # configFile = pkgs.writeText "default.pa" ''
+            #     load-module module-bluetooth-policy
+            #     load-module modele-bluetooth-discover
+            # '';
+        };
         # enable bluetooth
-        bluetooth.enable = true;
+        bluetooth = {
+            enable = true;
+            extraConfig = ''
+                [General]
+                Enable=Source,Sink,Media,Socket
+            '';
+        };
 
         # those lines are kinda sorta for the nvidia gpu
         # nvidia.optimus_prime.enable = true;

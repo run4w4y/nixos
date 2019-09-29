@@ -6,7 +6,7 @@
         printing.enable = true;
         # get the printer drivers here
         printing.drivers = [ 
-            pkgs.hplip # driver for hp printers
+            pkgs.hplipWithPlugin # driver for hp printers
         ];
 
         # enable avahi

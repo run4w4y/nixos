@@ -64,7 +64,7 @@
         ghc
         okular
         xorg.xev
-        soulseekqt
+        # soulseekqt
         cuetools
         shntool
         split2flac
@@ -80,5 +80,9 @@
         flacon
         flac
         gdrivefs
+        spek
+        usbutils
+        wireshark
+        # quodlibet
     ];
 }

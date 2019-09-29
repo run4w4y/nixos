@@ -15,7 +15,7 @@
 
         mpd = {
             enable = true;
-            musicDirectory = "/mnt/hdd/music";
+            musicDirectory = "/home/adachi/github/python/music_tagger/test";
         };
     };
 
@@ -64,11 +64,11 @@
                 color3 = #e84a4a
                 color4 = #9263e8
                 color5 = #f491ff
-                color6 = #ec7285
+                color6 = #4a4a4a
                 color7 = #2f2f2f
                 color8 = #6d6d6d
-                color9 = #e5dcdc
-                color10 = #ff8787
+                color9 = #db1f6d
+                color10 = #707070
                 color11 = #6a1fdb
                 color12 = #ffad42
                 color13 = #eb3461

@@ -145,6 +145,11 @@ with rec {
         label-occupied-background = colors.background;
         label-occupied-foreground = colors.foregroundAlt1;
         label-occupied-padding-right = 1;
+        
+        label-urgent = "□";
+        label-urgent-font = 3;
+        label-urgent-background = colors.background;
+        label-urgent-foreground = colors.backgroundAlt1;
 
         label-empty = "□";
         label-empty-font = 3;
