@@ -83,6 +83,7 @@
         spek
         usbutils
         wireshark
+        pciutils
         # quodlibet
     ];
 }

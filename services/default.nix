@@ -27,7 +27,7 @@
             xkbOptions = "eurosign:e";
 
             # drivers for gpu
-            videoDrivers = [ "intel" ];
+            videoDrivers = [ "intel" "nouveau" ];
 
             # set up DE here
             desktopManager = {

@@ -53,4 +53,16 @@
     version = "0.10.6";
     sha256 = "73c0264d9c939ef3b60d4d788692c9ba29449ff6e03975692782fed816a4fc9b";
     }
+    { # elm support
+    name = "elm";
+    publisher = "sbrink";
+    version = "0.25.0";
+    sha256 = "e872b15c47bff0a23b43ac3ab4c845a16a9a6f74cefbe0843973045d828b5ab6";
+    }
+    { # purescript support
+    name = "language-purescript";
+    publisher = "nwolverson";
+    version = "0.2.1";
+    sha256 = "fa778889ba295cf1c16ceef955cc871bcc5f2516ef652fb20fd3b0522e2fc3a2";
+    }
 ]
