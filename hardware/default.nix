@@ -35,6 +35,8 @@
         opengl = {
             # enable opengl
             enable = true;
+            # needed for steam to work 
+            driSupport32Bit = true;
             # then get vaapi working
             extraPackages = with pkgs; [
                 vaapiIntel

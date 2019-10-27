@@ -84,6 +84,7 @@
         usbutils
         wireshark
         pciutils
+        steam
         # quodlibet
     ];
 }
