@@ -65,4 +65,10 @@
     version = "0.2.1";
     sha256 = "fa778889ba295cf1c16ceef955cc871bcc5f2516ef652fb20fd3b0522e2fc3a2";
     }
+    { # haxe support
+    name = "haxe";
+    publisher = "haxedevs";
+    version = "0.1.1";
+    sha256 = "fc6f60cfbac773689585c93f7e610c90ba57c4d15685be4c060e5e30d500fb64";
+    }
 ]
