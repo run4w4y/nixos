@@ -86,5 +86,6 @@
         pciutils
         steam
         # quodlibet
+        xclip
     ];
 }

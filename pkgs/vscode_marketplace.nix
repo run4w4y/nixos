@@ -71,4 +71,16 @@
     version = "0.1.1";
     sha256 = "fc6f60cfbac773689585c93f7e610c90ba57c4d15685be4c060e5e30d500fb64";
     }
+    { # blueish theme
+    name = "blue-light";
+    publisher = "msnilshartmann";
+    version = "0.0.8";
+    sha256 = "a1977514462900b5089338b5e26f00f2d91ace27b9309b31416cab459c6de1ee";
+    }
+    { # grayscale theme
+    name = "theme-verdandi";
+    publisher = "be5invis";
+    version = "2.0.1";
+    sha256 = "bdc1b32f92bc4e8906e59478a51b29bb8b2c75ffa1d39639c72a4e9f8d85f591";
+    }
 ]
