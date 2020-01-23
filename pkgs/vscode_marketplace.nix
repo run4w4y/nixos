@@ -11,12 +11,12 @@
     version = "6.0.1";
     sha256 = "dcaf64e8895f5becfd97c47c272dc5ae59deece54f818ba368a1405f4f9cb360";
     }
-    { # another nice light theme
-    name = "night-owl-plus";
-    publisher = "svipas";
-    version = "1.0.2";
-    sha256 = "22b3d29022df97f47b1b947bd3c05afa2a5b9febd05d5b5adafd4bf180c06680";
-    }
+    # { # another nice light theme
+    # name = "night-owl-plus";
+    # publisher = "svipas";
+    # version = "1.0.2";
+    # sha256 = "22b3d29022df97f47b1b947bd3c05afa2a5b9febd05d5b5adafd4bf180c06680";
+    # }
     { # support for cmake files 
     name = "cmake";
     publisher = "twxs";
@@ -66,10 +66,10 @@
     sha256 = "fa778889ba295cf1c16ceef955cc871bcc5f2516ef652fb20fd3b0522e2fc3a2";
     }
     { # haxe support
-    name = "haxe";
-    publisher = "haxedevs";
-    version = "0.1.1";
-    sha256 = "fc6f60cfbac773689585c93f7e610c90ba57c4d15685be4c060e5e30d500fb64";
+    name = "vshaxe";
+    publisher = "nadako";
+    version = "2.17.0";
+    sha256 = "cf2ed108eb748020848dd356eea1bfc90c797bc465bccc8253053812eb1f96e3";
     }
     { # blueish theme
     name = "blue-light";
@@ -82,5 +82,11 @@
     publisher = "be5invis";
     version = "2.0.1";
     sha256 = "bdc1b32f92bc4e8906e59478a51b29bb8b2c75ffa1d39639c72a4e9f8d85f591";
+    }
+    { # elixir support for vscode
+    name = "vscode-elixir";
+    publisher = "mjmcloug";
+    version = "1.1.0";
+    sha256 = "104e31ef99631aedb5da0aaed5c003b3c6ec5cb693a156839d71ceab20e5474e";
     }
 ]
