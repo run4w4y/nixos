@@ -13,5 +13,7 @@
             # this shit lets grub detect other systems installed alongside
             grub.useOSProber = true;
         };
+
+        supportedFilesystems = [ "ntfs" ];
     };
 }

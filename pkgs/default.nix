@@ -108,5 +108,6 @@
             xclip
             piper
             rclone
+            deluge
         ];
 }

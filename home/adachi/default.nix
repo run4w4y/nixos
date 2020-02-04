@@ -15,7 +15,7 @@
 
         mpd = {
             enable = true;
-            musicDirectory = "/home/adachi/github/python/music_tagger/test";
+            musicDirectory = "/mnt/hdd/collection";
         };
     };
 

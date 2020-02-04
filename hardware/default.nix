@@ -28,7 +28,7 @@
 
         # those lines are kinda sorta for the nvidia gpu
         # nvidia.optimus_prime.enable = true;
-        # bumblebee.enable = true;
+        bumblebee.enable = true;
         # nvidiaOptimus.disable = true;
 
         # opengl stuff
