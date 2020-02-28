@@ -19,6 +19,9 @@
                 ] # then download other extensions from the marketplace 
                 ++ vscode-utils.extensionsFromVscodeMarketplace customExtensions;
             };
+            unstable = import <nixos-unstable> {
+                config = config.nixpkgs.config;
+            };
         };
     };
 }
