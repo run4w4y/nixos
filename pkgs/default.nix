@@ -37,7 +37,7 @@
             nix-index
             screen
             chromium
-            discord
+            unstable.discord
             tdesktop
             python
             dunst # need it for dunstify to work cause home-manager is big dumb and doesnt let you override the package
@@ -54,7 +54,7 @@
             glxinfo
             xorg.xdpyinfo
             openvpn
-            gcc
+            # gcc
             papirus-icon-theme
             materia-theme
             capitaine-cursors
@@ -66,6 +66,8 @@
             # aqemu
             # jetbrains.pycharm-professional
             # jetbrains.clion
+            # jetbrains.idea-community
+            kotlin
             hashit
             cmake
             calcurse
@@ -77,17 +79,17 @@
             unzip
             p7zip 
             transmission-gtk
-            go
+            # go
             blueman
-            cabal-install
-            ghc
+            # cabal-install
+            # ghc
             okular
             xorg.xev
             # soulseekqt
             cuetools
             shntool
             split2flac
-            fcrackzip
+            # fcrackzip
             hexchat
             ncmpcpp
             ranger
@@ -98,16 +100,17 @@
             easytag
             flacon
             flac
-            gdrivefs
+            # gdrivefs
             spek
             usbutils
             wireshark
             pciutils
-            steam
+            # steam
             # quodlibet
             xclip
             piper
             rclone
             deluge
+            thunderbird
         ];
 }
