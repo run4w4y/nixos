@@ -22,6 +22,17 @@
             unstable = import <nixos-unstable> {
                 config = config.nixpkgs.config;
             };
+            bumblebee = pkgs.bumblebee.override {
+                extraNvidiaDeviceOptions = ''
+                        Option "ProbeAllGpus" "false"
+                        Option "AllowEmptyInitialConfiguration"
+                    EndSection
+
+                    Section "Screen"
+                        Identifier "Default Screen"
+                        Device "DiscreteNvidia"
+                '';
+            };
         };
     };
 }

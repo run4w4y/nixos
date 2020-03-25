@@ -53,6 +53,7 @@
             killall
             glxinfo
             xorg.xdpyinfo
+            xorg.xf86videointel
             openvpn
             # gcc
             papirus-icon-theme
