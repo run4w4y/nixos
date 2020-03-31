@@ -11,7 +11,13 @@
             efi.canTouchEfiVariables = true;
 
             # this shit lets grub detect other systems installed alongside
-            grub.useOSProber = true;
+            grub = {
+                enable = true;
+                version = 2;
+                devices = [ "nodev" ];
+                efiSupport = true;
+                useOSProber = true;
+            };
         };
 
         supportedFilesystems = [ "ntfs" ];
