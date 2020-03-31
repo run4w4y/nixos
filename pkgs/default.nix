@@ -55,7 +55,7 @@
             xorg.xdpyinfo
             xorg.xf86videointel
             openvpn
-            # gcc
+            # gcc1
             papirus-icon-theme
             materia-theme
             capitaine-cursors
@@ -113,5 +113,6 @@
             rclone
             deluge
             thunderbird
+            zoom-us
         ];
 }
