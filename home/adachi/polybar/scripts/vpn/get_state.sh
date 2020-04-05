@@ -5,5 +5,5 @@ if pgrep -x $target >/dev/null
 then
     echo "%{F#ffffff}  %{F-}"
 else
-    echo "%{F#73b4c7}  %{F-}"
+    echo "%{F#5b6d8a}  %{F-}"
 fi

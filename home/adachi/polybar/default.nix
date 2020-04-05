@@ -1,12 +1,12 @@
 with rec {
     colors = {
         background = "#ffffff";
-        backgroundAlt = "#1f697d";
-        backgroundAlt1 = "#37a2bf";
+        backgroundAlt = "#303d52";
+        backgroundAlt1 = "#4c5a70";
         foreground = "#496269";
         foregroundAlt = "#ffffff";
-        foregroundAlt1 = "#37a2bf";
-        foregroundTrans = "#73b4c7";
+        foregroundAlt1 = "#4c5a70";
+        foregroundTrans = "#5b6d8a";
         urgent = "#bd2c40";
         white = "#ffffff";
         primary = "#ffb52a";
