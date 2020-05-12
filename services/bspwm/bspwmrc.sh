@@ -11,7 +11,7 @@ bspc config split_ratio          0.52
 bspc config borderless_monocle   true
 bspc config gapless_monocle      true
 
-bspc config focused_border_color "#97acf0"
+bspc config focused_border_color "#d9215b"
 bspc config normal_border_color "#ffffff"
 
 bspc rule -a Gimp desktop='^8' state=floating follow=on

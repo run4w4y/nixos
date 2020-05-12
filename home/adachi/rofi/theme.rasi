@@ -23,7 +23,7 @@
     alternate-normal-foreground: @foreground;
     normal-background:           rgba ( 255, 255, 255, 100 % );
     lightfg:                     rgba ( 88, 104, 117, 100 % );
-    selected-normal-background:  rgba ( 151, 172, 240, 100 % ); 
+    selected-normal-background:  rgba ( 217, 33, 91, 100 % ); 
     border-color:                @foreground;
     spacing:                     2;
     separatorcolor:              @foreground;
